@@ -1,3 +1,25 @@
 type Query {
-  greeting: String
+  job: [Job!]
+}
+
+"""
+Represents a job posted to our board.
+"""
+type Job {
+  """
+  ID that identifies the job uniquely.
+  """
+  id: ID!
+  """
+  The __date__ when the job was published, in ISO-8601 format. E.g: 2024-01-18
+  """
+  date: String!
+  """
+  Job title
+  """
+  title: String!
+  """
+  Job detailed description
+  """
+  description: String
 }
