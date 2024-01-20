@@ -5,7 +5,7 @@ const client = new GraphQLClient("http://localhost:9000/graphql");
 export async function getJobs() {
   const query = gql`
     query {
-      job {
+      jobs {
         id
         title
         date
@@ -17,7 +17,7 @@ export async function getJobs() {
     }
   `;
 
-  const { job } = await client.request(query);
+  const { jobs } = await client.request(query);
 
-  return job;
+  return jobs;
 }
