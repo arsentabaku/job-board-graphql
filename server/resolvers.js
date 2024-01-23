@@ -22,8 +22,8 @@ export const resolvers = {
   },
 
   Mutation: {
-    createJob: (_root, { title, description }) => {
-      const companyId = "FjcJCHJALA4i"; // TODO set based on user
+    createJob: (_root, { input: { title, description } }) => {
+      const companyId = "FjcJCHJALA4i";
       return createJob({ companyId, title, description });
     },
   },
